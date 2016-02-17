@@ -1,0 +1,10 @@
+
+*.xcworkspacedata
+
+*.xcuserstate
+
+*.xcscheme
+
+BLEDemo.xcodeproj/xcuserdata/Brian.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.json
