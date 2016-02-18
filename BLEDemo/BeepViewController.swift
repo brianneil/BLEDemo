@@ -25,15 +25,19 @@ class BeepViewController: UIViewController {
     var BLEStatusFlag: Bool = false {
         didSet {
             if BLEStatusFlag {
-                BLEStatus.text = "BLE Status: Disconnected"
-            } else {
                 BLEStatus.text = "BLE Status: Connected"
+            } else {
+                BLEStatus.text = "BLE Status: Disconnected"
             }
         }
     }
     
     var TimerTXDelay: NSTimer?
     var allowTX = true
+    
+    struct constants {
+        static let beepTest: UInt8 = 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +69,7 @@ class BeepViewController: UIViewController {
     }
 
     @IBAction func BeepTest(sender: UIButton) {
-        sendMessage(sender.currentTitle!)
+        sendMessage(constants.beepTest)
     }
     
     @IBOutlet weak var Frequency: UILabel!
@@ -87,7 +91,7 @@ class BeepViewController: UIViewController {
         })
     }
     
-    func sendMessage(message: String) {
+    func sendMessage(message: UInt8) {
         //1st, check that allowTX is armed again
         if !allowTX {
             return
@@ -105,7 +109,7 @@ class BeepViewController: UIViewController {
         }
     }
     
-    func timerTxDelayElapsed() {    //Timer's done, rearm the message sender, kill the timer
+    func timerTXDelayElapsed() {    //Timer's done, rearm the message sender, kill the timer
         allowTX = true
         stopTimerTXDelay()
     }

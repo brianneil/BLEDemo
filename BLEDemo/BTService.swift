@@ -89,12 +89,12 @@ class BTService: NSObject, CBPeripheralDelegate {
         }
     }
     
-    func writeMessage(message: String) {
+    func writeMessage(message: UInt8) {
         //First check that we discovered a characteristic before we write to it
         if let beepCharacteristic = self.beepCharacteristic {
             //create a mutable var to pass to the writeValue fxn
             var messageValue = message
-            let data = NSData(bytes: &messageValue, length: sizeofValue(messageValue))  //Create a bag of bits
+            let data = NSData(bytes: &messageValue, length: sizeof(UInt8))  //Create a bag of bits
             self.peripheral?.writeValue(data, forCharacteristic: beepCharacteristic, type: CBCharacteristicWriteType.WithResponse)  //Send the bag of bits
         }
     }
