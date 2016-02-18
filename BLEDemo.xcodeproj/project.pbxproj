@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D3049CB51C73F72200D681C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3049CB41C73F72200D681C7 /* AppDelegate.swift */; };
-		D3049CB71C73F72200D681C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3049CB61C73F72200D681C7 /* ViewController.swift */; };
 		D3049CBA1C73F72200D681C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3049CB81C73F72200D681C7 /* Main.storyboard */; };
 		D3049CBC1C73F72200D681C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3049CBB1C73F72200D681C7 /* Assets.xcassets */; };
 		D3049CBF1C73F72200D681C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3049CBD1C73F72200D681C7 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		D3049CE31C73F86C00D681C7 /* BeepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3049CE21C73F86C00D681C7 /* BeepViewController.swift */; };
 		D3049CE51C74014200D681C7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3049CE41C74014200D681C7 /* CoreBluetooth.framework */; };
 		D3049CE71C7402FA00D681C7 /* BTDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3049CE61C7402FA00D681C7 /* BTDiscovery.swift */; };
+		D3FF4DB41C753FD80059AEA8 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FF4DB31C753FD80059AEA8 /* BTService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		D3049CB11C73F72200D681C7 /* BLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3049CB41C73F72200D681C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3049CB61C73F72200D681C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3049CB91C73F72200D681C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3049CBB1C73F72200D681C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3049CBE1C73F72200D681C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		D3049CE21C73F86C00D681C7 /* BeepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeepViewController.swift; sourceTree = "<group>"; };
 		D3049CE41C74014200D681C7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D3049CE61C7402FA00D681C7 /* BTDiscovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscovery.swift; sourceTree = "<group>"; };
+		D3FF4DB31C753FD80059AEA8 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +105,13 @@
 		D3049CB31C73F72200D681C7 /* BLEDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D3049CB41C73F72200D681C7 /* AppDelegate.swift */,
-				D3049CB61C73F72200D681C7 /* ViewController.swift */,
+				D3FF4DB21C753FAE0059AEA8 /* BLE Classes */,
 				D3049CB81C73F72200D681C7 /* Main.storyboard */,
 				D3049CE21C73F86C00D681C7 /* BeepViewController.swift */,
 				D3049CBB1C73F72200D681C7 /* Assets.xcassets */,
 				D3049CBD1C73F72200D681C7 /* LaunchScreen.storyboard */,
+				D3049CB41C73F72200D681C7 /* AppDelegate.swift */,
 				D3049CC01C73F72200D681C7 /* Info.plist */,
-				D3049CE61C7402FA00D681C7 /* BTDiscovery.swift */,
 			);
 			path = BLEDemo;
 			sourceTree = "<group>";
@@ -133,6 +132,15 @@
 				D3049CD61C73F72200D681C7 /* Info.plist */,
 			);
 			path = BLEDemoUITests;
+			sourceTree = "<group>";
+		};
+		D3FF4DB21C753FAE0059AEA8 /* BLE Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D3049CE61C7402FA00D681C7 /* BTDiscovery.swift */,
+				D3FF4DB31C753FD80059AEA8 /* BTService.swift */,
+			);
+			name = "BLE Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3049CB71C73F72200D681C7 /* ViewController.swift in Sources */,
 				D3049CB51C73F72200D681C7 /* AppDelegate.swift in Sources */,
+				D3FF4DB41C753FD80059AEA8 /* BTService.swift in Sources */,
 				D3049CE71C7402FA00D681C7 /* BTDiscovery.swift in Sources */,
 				D3049CE31C73F86C00D681C7 /* BeepViewController.swift in Sources */,
 			);
@@ -416,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BLEDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ApolloHearing.BrianNeil.BLEDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apollohearing.brian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -427,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BLEDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ApolloHearing.BrianNeil.BLEDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apollohearing.brian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -499,6 +507,7 @@
 				D3049CDB1C73F72200D681C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3049CDC1C73F72200D681C7 /* Build configuration list for PBXNativeTarget "BLEDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +516,7 @@
 				D3049CDE1C73F72200D681C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3049CDF1C73F72200D681C7 /* Build configuration list for PBXNativeTarget "BLEDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +525,7 @@
 				D3049CE11C73F72200D681C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
